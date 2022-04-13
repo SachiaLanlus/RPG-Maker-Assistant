@@ -1,4 +1,4 @@
-﻿// xinputTest.cpp : Defines the entry point for the console application.
+// xinputTest.cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
@@ -30,9 +30,7 @@ r1=shift,
 l2=,
 r2=keepRun,
 */
-//////////////////////////////
-/*this program incomplete*/
-//////////////////////////////
+
 //Huang-Ku Yeh
 using namespace std;
 
@@ -198,24 +196,6 @@ int main()
 			release(VK_CONTROL);
 			cout << "L1 up" << endl;
 		}
-		/*if ((xs.Gamepad.bLeftTrigger<30) && l2Pressed&&!keepRun)
-		{
-			l2Pressed = false;
-			release(VK_SHIFT);
-			cout << "L2 up" << endl;
-		}*/
-		/*if ((xs.Gamepad.wButtons & 0x0200) == 0 && r1Pressed)
-		{
-			r1Pressed = false;
-			release(VK_SHIFT);
-			cout << "R1 up" << endl;
-		}*/
-		/*if ((xs.Gamepad.bRightTrigger<30) && r2Pressed&&!keepRun)
-		{
-			l2Pressed = false;
-			release(VK_SHIFT);
-			cout << "R2 up" << endl;
-		}*/
 		if ((xs.Gamepad.wButtons & 0x0001) == 0 && upPressed)
 		{
 			upPressed = false;
@@ -288,34 +268,9 @@ void getCursorMode()
 		ss.str("");
 		ss.clear();
 		SetConsoleTitle(str.c_str());
-		//cout<<"X:"<<pt.x<<" Y:"<<pt.y<<endl;
-		//cout<<str<<endl;
 		Sleep(200);
 	}
 }
-
-
-/*void pause(int t)
-{
-if(t<0)return;
-static LARGE_INTEGER m_liPerfFreq={0};
-QueryPerformanceFrequency(&m_liPerfFreq);
-
-LARGE_INTEGER m_liPerfStart={0};
-QueryPerformanceCounter(&m_liPerfStart);
-
-LARGE_INTEGER liPerfNow={0};
-QueryPerformanceCounter(&liPerfNow);
-
-LONGLONG decodeDulation;
-LONGLONG temp=t*m_liPerfFreq.QuadPart/1000;
-while(true)
-{
-decodeDulation=(liPerfNow.QuadPart - m_liPerfStart.QuadPart);
-if(decodeDulation>=temp) break;
-QueryPerformanceCounter(&liPerfNow);
-}
-}*/
 
 void mouseClick(int key)
 {
@@ -501,7 +456,6 @@ void readMacro()
 		{
 			if (ss.str()[j] >= 'a'&&ss.str()[j] <= 'z') ss.str()[j] -= 32;
 		}
-		//cout << "!"<<ss.str()<<endl;
 		if (ss.str() == "X")
 		{
 			cout << "X" << endl;
@@ -534,7 +488,6 @@ void readMacro()
 		}
 		else
 		{
-			//cout << "?" << ss.str() << endl;
 			t = 0;
 			for(int k=0;k<ss.str().length();k++)
 			{
